@@ -48,7 +48,9 @@ $(document).ready(function() {
     var result = cryptoSquare(string);
     for (i in result){
       $(".cryptoSquare").append(result[i]);
-      if (((parseInt(i) + 1) % 5) === 0){
+      if (((parseInt(i) + 1) % 20) === 0){
+        $(".cryptoSquare").append("<br>");
+      } else if (((parseInt(i) + 1) % 5) === 0){
         console.log(i);
         $(".cryptoSquare").append(" ");
       }

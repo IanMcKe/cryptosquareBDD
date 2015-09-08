@@ -7,7 +7,7 @@
 ## Known Bugs
 
 Only strings with a length of a perfect square (minus spaces/punctuation) work!
-Program should start a new line after four encrypted "words" but doesn't.
+Program should start a new line after four encrypted "words" of length 5 but occasionally produces words not of length 5.
 
 ## Description
 
