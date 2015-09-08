@@ -14,10 +14,10 @@ describe('findSquare', function() {
 
 describe('cryptoSquare', function() {
   it("returns encrypted two character string", function() {
-    expect(cryptoSquare("it")).to.equal("it");
+    expect(cryptoSquare("it")).to.equal(["it"]);
   });
 
   it("returns encrypted three character string", function() {
-    expect(cryptoSquare("its")).to.equal("it\ns");
+    expect(cryptoSquare("its")).to.equal(["it","s"]);
   });
 });
