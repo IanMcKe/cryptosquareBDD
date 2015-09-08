@@ -12,12 +12,41 @@ describe('findSquare', function() {
   });
 });
 
+describe('formatString', function() {
+  it("replaces apostrophes with a blank string", function() {
+    expect(formatString("don't")).to.equal("dont");
+  });
+
+  it("replaces spaces with a blank", function() {
+    expect(formatString("this string")).to.equal("thisstring");
+  });
+
+  it("replaces commas with a blank", function() {
+    expect(formatString("this, string")).to.equal("thisstring");
+  });
+
+  it("replaces periods with a blank", function() {
+    expect(formatString("this. string")).to.equal("thisstring");
+  });
+
+  it("replaces - with a blank", function() {
+    expect(formatString("this-string")).to.equal("thisstring");
+  });
+  it("removes mixed case entries and turn them to lowecase", function() {
+    expect(formatString("ThiS StrInG")).to.equal("thisstring");
+  });
+});
+
 describe('cryptoSquare', function() {
   it("returns encrypted two character string", function() {
-    expect(cryptoSquare("it")).to.equal(["it"]);
+    expect(cryptoSquare("it")).to.eql(["it"]);
   });
 
   it("returns encrypted three character string", function() {
-    expect(cryptoSquare("its")).to.equal(["it","s"]);
+    expect(cryptoSquare("its")).to.eql(["it","s"]);
+  });
+
+  it("returns encrypted five character string", function() {
+    expect(cryptoSquare("Thing")).to.eql(["thi", "ng"]);
   });
 });
